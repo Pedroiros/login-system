@@ -16,22 +16,25 @@ for n in range(len(usuarios)):
     if usuarios[n][0] == nuevo_usuario:
         print('El usuario ya existe')
         existe = True
-        nroUser=(n)
-
-nueva_contrasena = input('Ingrese su contrasena: \n')
-funciones.verificacionPass(nueva_contrasena)
-
-if existe and usuarios[nroUser][1] == nueva_contrasena:
-    print('La contrasena ingresada es correcta')
-else:
-    print('La contrasena ingresada es incorrecta')
-
-if (not existe) :
-    print('Creando nuevo User.')
-    f = open('userDB.txt', 'a')
-    f.write(nuevo_usuario+','+nueva_contrasena+'\n')
+        contrasena = input('Ingrese su contrasena: \n')
+        funciones.verificacionPass(contrasena)
+        if usuarios[n][1] == contrasena:
+            print('La contrasena ingresada es correcta')
+        else:
+            print('La contrasena ingresada es incorrecta')
 
 
-print('Fin')
+if (not existe):
+    print('El usuario no existe, se creara una cuenta nueva\n')
+    contrasena_nueva = input('Ingrese contrasena nueva:\n')
+    if funciones.verificacionPass(contrasena_nueva):
+        print('Creando nuevo User.')
+        f = open('userDB.txt', 'a')
+        f.write(nuevo_usuario+','+contrasena_nueva+'\n')
+    else:
+        print('Contrasena no valida.')
+
+
+print('-'*10, ' Fin ', '-'*10)
 # f.write('('+nuevo_usuario+','+nueva_contrasena+')\n')
 # print(a)
