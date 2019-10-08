@@ -1,5 +1,7 @@
-(pedroiros,12356)
-(pedro2,abcdef)
-(pedro3,adas)
-(pepepe,2312)
-(pedro1,12345)
+pedroiros,12356
+pedro2,abcdef
+pedro3,adas
+pepepe,2312
+pedro1,12345
+pedrocapo,123
+pedrito,123333
